@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberZone | Ciber & Gaming Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#inicio" class="logo">CYBER<span>ZONE</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+        <nav id="navMenu">
+            <a href="#estaciones">Estaciones</a>
+            <a href="#" id="navReservaLink">Reservar</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="app-layout">
+        <section class="hero" id="inicio">
+            <p class="hero-tag">// GAMING CENTER · BOLIVIA</p>
+            <h1>Entra a la <span class="glitch">CyberZone</span></h1>
+            <p class="hero-sub">PS5, PC Gamer y Arcade. Hardware de élite, 40 BOB la hora.</p>
+            <button class="btn-neon" id="btnOpenReserva">Reservar ahora</button>
+        </section>
+
+        <main class="container">
+            <!-- ESTACIONES -->
+            <section id="estaciones">
+                <h2 class="section-title">Nuestras <span>Estaciones</span></h2>
+
+                <div class="grid">
+                    <!-- PS5 -->
+                    <div class="estacion-card card-green">
+                        <div class="card-header">
+                            <div class="card-icon">🎮</div>
+                            <h3>Estación PS5</h3>
+                        </div>
+                        <p class="card-desc">Consola de nueva generación en sala cómoda, ideal para jugar en pareja o con amigos.</p>
+                        <div class="accordion-btn">📌 Ver Detalles del Servicio</div>
+                        <div class="accordion-panel" style="display:none;">
+                            <h4>Componentes</h4>
+                            <ul>
+                                <li>PlayStation 5 con SSD de 1 TB</li>
+                                <li>Ray tracing y salida 4K a 120 fps</li>
+                            </ul>
+                            <h4>Monitores</h4>
+                            <ul>
+                                <li>TV 4K de 55" con modo juego (VRR)</li>
+                            </ul>
+                            <h4>Periféricos</h4>
+                            <ul>
+                                <li>2 mandos DualSense / Pulse 3D</li>
+                            </ul>
+                            <h4>Catálogo de juegos</h4>
+                            <ul>
+                                <li>FC 26, God of War, Spider-Man 2, MK1</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- PC GAMER -->
+                    <div class="estacion-card card-blue">
+                        <div class="card-header">
+                            <div class="card-icon">🖥️</div>
+                            <h3>PC Gamer Pro</h3>
+                        </div>
+                        <p class="card-desc">Máximo rendimiento para competitivo y juegos AAA en gráficos ultra.</p>
+                        <div class="accordion-btn">📌 Ver Detalles del Servicio</div>
+                        <div class="accordion-panel" style="display:none;">
+                            <h4>Componentes</h4>
+                            <ul>
+                                <li>GPU: RTX 4080 / CPU: i7 14th Gen</li>
+                                <li>32 GB RAM DDR5 + SSD NVMe 1 TB</li>
+                            </ul>
+                            <h4>Monitores</h4>
+                            <ul>
+                                <li>Monitor 240Hz 1 ms, 27" QHD</li>
+                            </ul>
+                            <h4>Periféricos</h4>
+                            <ul>
+                                <li>Teclado mecánico RGB y mouse 26K DPI</li>
+                            </ul>
+                            <h4>Catálogo de juegos</h4>
+                            <ul>
+                                <li>Valorant, CS2, LoL, Cyberpunk 2077</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ARCADE -->
+                    <div class="estacion-card card-pink">
+                        <div class="card-header">
+                            <div class="card-icon">🕹️</div>
+                            <h3>Estación Arcade</h3>
+                        </div>
+                        <p class="card-desc">Gabinetes retro con la experiencia clásica de los salones de los 90.</p>
+                        <div class="accordion-btn">📌 Ver Detalles del Servicio</div>
+                        <div class="accordion-panel" style="display:none;">
+                            <h4>Componentes</h4>
+                            <ul>
+                                <li>Gabinete 2 jugadores con +3000 juegos</li>
+                                <li>Emulación fiel, sin lag de entrada</li>
+                            </ul>
+                            <h4>Monitores</h4>
+                            <ul>
+                                <li>Pantalla LCD 24" con filtro CRT</li>
+                            </ul>
+                            <h4>Periféricos</h4>
+                            <ul>
+                                <li>Joysticks y botones tipo Sanwa</li>
+                            </ul>
+                            <h4>Catálogo de juegos</h4>
+                            <ul>
+                                <li>Street Fighter II, Metal Slug, KOF '98</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODAL DE RESERVA (OCULTO POR DEFECTO) -->
+    <div id="modalReservaOverlay" class="modal-overlay" style="display: none;">
+        <section id="reserva" class="modal-content">
+            <button id="btnCloseModal" class="btn-close">&times;</button>
+            <h2 class="section-title">Reserva tu <span>Estación</span></h2>
+
+            <div class="reserva-box">
+                <label for="estacion">Estación:</label>
+                <select id="estacion">
+                    <option>PS5</option>
+                    <option>PC Gamer Pro</option>
+                    <option>Arcade</option>
+                </select>
+
+                <label for="hrs">Horas de Reserva (40 BOB/hr):</label>
+                <input type="number" id="hrs" value="1" min="1" max="12">
+
+                <h4>Total: <span id="total">40</span> BOB</h4>
+                <button id="btnModal">Confirmar Reserva</button>
+
+                <div id="status-msg" style="margin-top: 10px; font-weight: bold; color: #00d2ff;"></div>
+
+                <div id="timer-container" style="display:none; margin-top: 15px;">
+                    <p>Tiempo restante para confirmar pago: <span id="countdown" style="color: #ff007f; font-weight: bold;">05:00</span></p>
+                    <div class="acciones-pago">
+                        <button id="btnPagar" type="button">✅ Pagar y Confirmar</button>
+                        <button id="btnCancelar" type="button">✖ Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contacto">
+        <span><strong class="logo-inline">CYBER<span>ZONE</span></strong> · Abierto todos los días (10:00 - 23:00)</span>
+        
+        <!-- SECCIÓN DE REDES SOCIALES COMPACTA -->
+        <div class="social-links">
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">📸</a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">📘</a>
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok">🎵</a>
+        <a href="https://wa.me/59100000000" target="_blank" aria-label="WhatsApp">💬</a>
+        </div>
+
+        <span class="copy">© 2026 CyberZone. Todos los derechos reservados.</span>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
