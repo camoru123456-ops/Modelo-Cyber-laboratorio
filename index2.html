@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f97316">
+    <title>Módulo Secundario - Cyber Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+    <div class="app pwa-container">
+        <header class="topbar">
+            <a href="index.html" class="icon-btn btn-tactil">🏠 Volver</a>
+            <h1>Panel Secundario / Catálogo PWA</h1>
+            <button id="btnRefrescar" class="icon-btn btn-tactil" title="Refrescar">🔄</button>
+        </header>
+        <main class="views" style="display:block; padding: 20px; overflow-y: auto;">
+            <div class="card">
+                <h3>Módulo Independiente (Segundo HTML)</h3>
+                <p>Este archivo complementario demuestra la arquitectura multi-página conectada al mismo Service Worker Offline-First.</p>
+                <div style="margin-top: 15px;">
+                    <button class="btn-submit btn-tactil btn-refresh-target" onclick="location.reload();">Refrescar Módulo</button>
+                </div>
+            </div>
+        </main>
+        <footer class="dock">
+            <span class="dock-texto">UPDS La Paz 2026</span>
+        </footer>
+    </div>
+</body>
+</html>

@@ -2,176 +2,287 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberZone | Ciber & Gaming Center</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f97316">
+    <link rel="manifest" href="manifest.json">
+    <title>Página Personal & Cyber - Carlos Rodolfo Morales Ruiz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="dark-mode">
 
-    <header class="navbar">
-        <a href="#inicio" class="logo">CYBER<span>ZONE</span></a>
-        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
-        <nav id="navMenu">
-            <a href="#estaciones">Estaciones</a>
-            <a href="#" id="navReservaLink">Reservar</a>
-            <a href="#contacto">Contacto</a>
+    <!-- APP SHELL: contenedor maestro de una sola vista -->
+    <div class="app pwa-container">
+
+        <!-- BARRA SUPERIOR -->
+        <header class="topbar">
+            <button id="menuBtn" class="icon-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">☰</button>
+            <h1 id="viewTitle">🏠 Inicio</h1>
+            <div class="topbar-actions">
+                <span id="estadoRed" class="badge-red">Verificando...</span>
+                <button id="btnRefrescar" class="icon-btn" aria-label="Refrescar vista" title="Refrescar">🔄</button>
+                <button id="themeBtn" class="icon-btn" aria-label="Cambiar tema">☀️ Claro</button>
+            </div>
+        </header>
+
+        <!-- MENÚ DESPLEGABLE (hamburguesa) -->
+        <nav id="navMenu" class="nav-menu" aria-label="Navegación principal">
+            <button class="nav-link active" data-view="inicio">🏠 Inicio</button>
+            <button class="nav-link" data-view="pasatiempos">📌 Pasatiempos</button>
+            <button class="nav-link" data-view="horario">📅 Horario</button>
+            <button class="nav-link" data-view="musica">🎵 Música</button>
+            <button class="nav-link" data-view="juegos">🎮 Juegos & Cyber</button>
+            <button class="nav-link" data-view="karaoke">🎤 Cola Karaoke</button>
+            <button class="nav-link" data-view="reservas">🎟️ Reservas VIP</button>
+            <button class="nav-link" data-view="trabajos">📋 Trabajos</button>
+            <button class="nav-link" data-view="frase">💬 Frase</button>
+            <a href="index2.html" class="nav-link external-link">📄 Ir a Segundo HTML</a>
         </nav>
-    </header>
 
-    <div class="app-layout">
-        <section class="hero" id="inicio">
-            <p class="hero-tag">// GAMING CENTER · BOLIVIA</p>
-            <h1>Entra a la <span class="glitch">CyberZone</span></h1>
-            <p class="hero-sub">PS5, PC Gamer y Arcade. Hardware de élite, 40 BOB la hora.</p>
-            <button class="btn-neon" id="btnOpenReserva">Reservar ahora</button>
-        </section>
+        <!-- ÁREA DE VISTAS (solo una visible a la vez, sin scroll global) -->
+        <main class="views">
 
-        <main class="container">
-            <!-- ESTACIONES -->
-            <section id="estaciones">
-                <h2 class="section-title">Nuestras <span>Estaciones</span></h2>
+            <!-- INICIO -->
+            <section class="view" id="view-inicio">
+                <div class="hero" aria-label="Galería">
+                    <div class="slide" style="background-image:url('devilmay.jpg')" role="img" aria-label="Juego"></div>
+                    <div class="slide" style="background-image:url('ciber.jpg')" role="img" aria-label="Estudio"></div>
+                    <div class="slide" style="background-image:url('lenguaje.jpg')" role="img" aria-label="Idioma"></div>
+                </div>
+                <p class="intro"><strong>Carlos Rodolfo Morales Ruiz</strong><br><span>Diseño Web II · PWA Offline-First</span></p>
+                <div class="tiles">
+                    <button class="tile btn-refresh-target" data-go="pasatiempos"><span>📌</span>Pasatiempos</button>
+                    <button class="tile btn-refresh-target" data-go="horario"><span>📅</span>Horario</button>
+                    <button class="tile btn-refresh-target" data-go="musica"><span>🎵</span>Música</button>
+                    <button class="tile btn-refresh-target" data-go="juegos"><span>🎮</span>Juegos</button>
+                    <button class="tile btn-refresh-target" data-go="karaoke"><span>🎤</span>Karaoke</button>
+                    <button class="tile btn-refresh-target" data-go="reservas"><span>🎟️</span>Reservas</button>
+                </div>
+            </section>
 
-                <div class="grid">
-                    <!-- PS5 -->
-                    <div class="estacion-card card-green">
-                        <div class="card-header">
-                            <div class="card-icon">🎮</div>
-                            <h3>Estación PS5</h3>
-                        </div>
-                        <p class="card-desc">Consola de nueva generación en sala cómoda, ideal para jugar en pareja o con amigos.</p>
-                        <div class="accordion-btn">📌 Ver Detalles del Servicio</div>
-                        <div class="accordion-panel" style="display:none;">
-                            <h4>Componentes</h4>
-                            <ul>
-                                <li>PlayStation 5 con SSD de 1 TB</li>
-                                <li>Ray tracing y salida 4K a 120 fps</li>
-                            </ul>
-                            <h4>Monitores</h4>
-                            <ul>
-                                <li>TV 4K de 55" con modo juego (VRR)</li>
-                            </ul>
-                            <h4>Periféricos</h4>
-                            <ul>
-                                <li>2 mandos DualSense / Pulse 3D</li>
-                            </ul>
-                            <h4>Catálogo de juegos</h4>
-                            <ul>
-                                <li>FC 26, God of War, Spider-Man 2, MK1</li>
+            <!-- PASATIEMPOS -->
+            <section class="view" id="view-pasatiempos">
+                <div class="acc">
+                    <div class="acc-item">
+                        <button class="acc-head" aria-expanded="true">⏳ Pasatiempos (No productivo) <i>▾</i></button>
+                        <div class="acc-body" style="display:block">
+                            <ul class="lista">
+                                <li>Jugar videojuegos</li>
+                                <li>Escuchar música</li>
+                                <li>Nadar</li>
                             </ul>
                         </div>
                     </div>
-
-                    <!-- PC GAMER -->
-                    <div class="estacion-card card-blue">
-                        <div class="card-header">
-                            <div class="card-icon">🖥️</div>
-                            <h3>PC Gamer Pro</h3>
-                        </div>
-                        <p class="card-desc">Máximo rendimiento para competitivo y juegos AAA en gráficos ultra.</p>
-                        <div class="accordion-btn">📌 Ver Detalles del Servicio</div>
-                        <div class="accordion-panel" style="display:none;">
-                            <h4>Componentes</h4>
-                            <ul>
-                                <li>GPU: RTX 4080 / CPU: i7 14th Gen</li>
-                                <li>32 GB RAM DDR5 + SSD NVMe 1 TB</li>
-                            </ul>
-                            <h4>Monitores</h4>
-                            <ul>
-                                <li>Monitor 240Hz 1 ms, 27" QHD</li>
-                            </ul>
-                            <h4>Periféricos</h4>
-                            <ul>
-                                <li>Teclado mecánico RGB y mouse 26K DPI</li>
-                            </ul>
-                            <h4>Catálogo de juegos</h4>
-                            <ul>
-                                <li>Valorant, CS2, LoL, Cyberpunk 2077</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- ARCADE -->
-                    <div class="estacion-card card-pink">
-                        <div class="card-header">
-                            <div class="card-icon">🕹️</div>
-                            <h3>Estación Arcade</h3>
-                        </div>
-                        <p class="card-desc">Gabinetes retro con la experiencia clásica de los salones de los 90.</p>
-                        <div class="accordion-btn">📌 Ver Detalles del Servicio</div>
-                        <div class="accordion-panel" style="display:none;">
-                            <h4>Componentes</h4>
-                            <ul>
-                                <li>Gabinete 2 jugadores con +3000 juegos</li>
-                                <li>Emulación fiel, sin lag de entrada</li>
-                            </ul>
-                            <h4>Monitores</h4>
-                            <ul>
-                                <li>Pantalla LCD 24" con filtro CRT</li>
-                            </ul>
-                            <h4>Periféricos</h4>
-                            <ul>
-                                <li>Joysticks y botones tipo Sanwa</li>
-                            </ul>
-                            <h4>Catálogo de juegos</h4>
-                            <ul>
-                                <li>Street Fighter II, Metal Slug, KOF '98</li>
+                    <div class="acc-item">
+                        <button class="acc-head" aria-expanded="false">🎯 Intereses (Productivo) <i>▾</i></button>
+                        <div class="acc-body">
+                            <ul class="lista">
+                                <li>Aprendiendo diferentes idiomas</li>
+                                <li>Estudiando ciberseguridad</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
-        </main>
-    </div>
 
-    <!-- MODAL DE RESERVA (OCULTO POR DEFECTO) -->
-    <div id="modalReservaOverlay" class="modal-overlay" style="display: none;">
-        <section id="reserva" class="modal-content">
-            <button id="btnCloseModal" class="btn-close">&times;</button>
-            <h2 class="section-title">Reserva tu <span>Estación</span></h2>
+            <!-- HORARIO -->
+            <section class="view" id="view-horario">
+                <table class="tabla">
+                    <thead><tr><th>Hora</th><th>Actividad</th></tr></thead>
+                    <tbody>
+                        <tr data-ini="7" data-fin="8"><td>7:00 — 8:00</td><td>Desayuno y preparación</td></tr>
+                        <tr data-ini="8" data-fin="12"><td>8:00 — 12:00</td><td>Estudio</td></tr>
+                        <tr data-ini="13" data-fin="14"><td>13:00 — 14:00</td><td>Almuerzo</td></tr>
+                        <tr data-ini="15" data-fin="17"><td>15:00 — 17:00</td><td>Estudios y aprendizaje</td></tr>
+                        <tr data-ini="18" data-fin="19"><td>18:00 — 19:00</td><td>Ejercicio o sacar a mi perro</td></tr>
+                        <tr data-ini="20" data-fin="23"><td>20:00 — 23:00</td><td>Jugar o hacer mis trabajos</td></tr>
+                    </tbody>
+                </table>
+                <p class="nota">La fila resaltada es la actividad de ahora.</p>
+            </section>
 
-            <div class="reserva-box">
-                <label for="estacion">Estación:</label>
-                <select id="estacion">
-                    <option>PS5</option>
-                    <option>PC Gamer Pro</option>
-                    <option>Arcade</option>
-                </select>
+            <!-- MÚSICA -->
+            <section class="view" id="view-musica">
+                <div class="filtros-doble">
+                    <select id="selGenero" aria-label="Género">
+                        <option value="todos">Todos los géneros</option>
+                        <option value="romantica">💖 Romántica</option>
+                        <option value="rap">🎤 Rap</option>
+                        <option value="rock">🎸 Rock Industrial</option>
+                        <option value="regeton">🔥 Reguetón</option>
+                        <option value="techno">🎛️ Techno</option>
+                    </select>
+                    <select id="selArtista" aria-label="Artista" disabled>
+                        <option value="todos">Todos los artistas</option>
+                    </select>
+                </div>
+                <div class="grid-2" id="gridMusica">
+                    <div class="card-musica card" data-genero="romantica" data-artista="Chayanne"><h3>Chayanne</h3><p>💖 Romántica · "Torero"</p></div>
+                    <div class="card-musica card" data-genero="romantica" data-artista="Ricardo Arjona"><h3>Ricardo Arjona</h3><p>💖 Romántica · "Historia de taxi"</p></div>
+                    <div class="card-musica card" data-genero="romantica" data-artista="José José"><h3>José José</h3><p>💖 Romántica · "El triste"</p></div>
+                    <div class="card-musica card" data-genero="rap" data-artista="Kanye West"><h3>Kanye West</h3><p>🎤 Rap · "Stronger"</p></div>
+                    <div class="card-musica card" data-genero="rap" data-artista="Tyler, the Creator"><h3>Tyler, the Creator</h3><p>🎤 Rap · "EARFQUAKE"</p></div>
+                    <div class="card-musica card" data-genero="rock" data-artista="Rammstein"><h3>Rammstein</h3><p>🎸 Rock Industrial · "Du hast"</p></div>
+                    <div class="card-musica card" data-genero="rock" data-artista="Nine Inch Nails"><h3>Nine Inch Nails</h3><p>🎸 Rock Industrial · "Closer"</p></div>
+                    <div class="card-musica card" data-genero="regeton" data-artista="Wisin y Yandel"><h3>Wisin y Yandel</h3><p>🔥 Reguetón · "Rakata"</p></div>
+                    <div class="card-musica card" data-genero="regeton" data-artista="Bad Bunny"><h3>Bad Bunny</h3><p>🔥 Reguetón · "Tití me preguntó"</p></div>
+                    <div class="card-musica card" data-genero="techno" data-artista="Aphex Twin"><h3>Aphex Twin</h3><p>🎛️ Techno · "Windowlicker"</p></div>
+                    <div class="card-musica card" data-genero="techno" data-artista="Richie Hawtin"><h3>Richie Hawtin</h3><p>🎛️ Techno · "Spastik"</p></div>
+                </div>
+                <div class="pager">
+                    <button class="btn-mini btn-refresh-target" id="musicaPrev">‹</button>
+                    <span id="musicaInfo">1 / 1</span>
+                    <button class="btn-mini btn-refresh-target" id="musicaNext">›</button>
+                </div>
+            </section>
 
-                <label for="hrs">Horas de Reserva (40 BOB/hr):</label>
-                <input type="number" id="hrs" value="1" min="1" max="12">
-
-                <h4>Total: <span id="total">40</span> BOB</h4>
-                <button id="btnModal">Confirmar Reserva</button>
-
-                <div id="status-msg" style="margin-top: 10px; font-weight: bold; color: #00d2ff;"></div>
-
-                <div id="timer-container" style="display:none; margin-top: 15px;">
-                    <p>Tiempo restante para confirmar pago: <span id="countdown" style="color: #ff007f; font-weight: bold;">05:00</span></p>
-                    <div class="acciones-pago">
-                        <button id="btnPagar" type="button">✅ Pagar y Confirmar</button>
-                        <button id="btnCancelar" type="button">✖ Cancelar</button>
+            <!-- JUEGOS -->
+            <section class="view" id="view-juegos">
+                <div class="toolbar">
+                    <span class="toolbar-label">Categoría: <b id="juegosFiltroActual">Todos</b></span>
+                    <div class="menu-filtro-container">
+                        <button id="juegosMenuBtn" class="btn-mini ancho btn-refresh-target" aria-expanded="false">🕹️ Filtrar ▾</button>
+                        <div id="juegosMenu" class="dropdown-menu">
+                            <button class="btn-filtro-item" data-cat="todos">Ver Todos</button>
+                            <button class="btn-filtro-item" data-cat="accion">Acción / Horror</button>
+                            <button class="btn-filtro-item" data-cat="shooter">Shooter / FPS</button>
+                            <button class="btn-filtro-item" data-cat="indie">Indie / Roguelike</button>
+                        </div>
                     </div>
                 </div>
+                <div class="grid-2" id="gridJuegos">
+                    <div class="card-juego" data-categoria="accion" data-titulo="Resident Evil 4" data-descripcion="Survival Horror clásico." style="background-image: url('resident.jpg');"><h3>Resident Evil 4</h3><p>Acción / Horror</p></div>
+                    <div class="card-juego" data-categoria="accion" data-titulo="Devil May Cry 3" data-descripcion="Hack and slash frenético." style="background-image: url('devilmay.jpg');"><h3>Devil May Cry 3</h3><p>Hack and Slash</p></div>
+                    <div class="card-juego" data-categoria="shooter" data-titulo="Half-Life" data-descripcion="Shooter legendario." style="background-image: url('half.jpg');"><h3>Half-Life</h3><p>Shooter / FPS</p></div>
+                    <div class="card-juego" data-categoria="indie" data-titulo="The Binding of Isaac" data-descripcion="Roguelike intenso." style="background-image: url('issac.jpg');"><h3>Binding of Isaac</h3><p>Indie / Roguelike</p></div>
+                </div>
+            </section>
+
+            <!-- KOREOKE (Bloque Lista de Canciones Blindada Anti-XSS & 44px) -->
+            <section class="view" id="view-karaoke">
+                <div class="card cola-karaoke">
+                    <h3>🎤 Pedidos de Karaoke en Vivo</h3>
+                    <div class="form-row-tactil">
+                        <input type="text" id="inputCancion" placeholder="Pedir canción o artista...">
+                        <button id="btnPedir" class="btn-tactil btn-refresh-target">+ Pedir</button>
+                    </div>
+                    <div id="listaCanciones" class="lista-segura-container"></div>
+                </div>
+            </section>
+
+            <!-- RESERVAS VIP (Bloque Anti-XSS) -->
+            <section class="view" id="view-reservas">
+                <div class="card">
+                    <h3>🎟️ Reserva de Sala VIP / Mesa</h3>
+                    <form id="formReserva" novalidate>
+                        <div class="form-group">
+                            <label for="clienteNombre">Nombre o grupo:</label>
+                            <input type="text" id="clienteNombre" placeholder="Ej. Grupo Linkin Park" required maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="salaSelect">Seleccionar Sala:</label>
+                            <select id="salaSelect">
+                                <option value="Sala VIP 1 (20:00 hrs)">Sala VIP 1 (20:00 hrs)</option>
+                                <option value="Mesa Central 4 (21:30 hrs)">Mesa Central 4 (21:30 hrs)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-submit btn-tactil btn-refresh-target">Confirmar Reserva</button>
+                    </form>
+                    <ul id="listaReservas" class="lista"></ul>
+                </div>
+            </section>
+
+            <!-- TRABAJOS (Formulario multipasos) -->
+            <section class="view" id="view-trabajos">
+                <form id="workForm" class="card form-card" novalidate>
+                    <div class="progreso">
+                        <span id="pasoTexto">Paso 1 de 3</span>
+                        <div class="dots"><i class="dot active"></i><i class="dot"></i><i class="dot"></i></div>
+                    </div>
+                    <div class="paso" data-paso="0">
+                        <div class="form-group" data-tipo="nombre">
+                            <label for="nombreCliente">1. Nombre completo</label>
+                            <input type="text" id="nombreCliente" placeholder="Ej. Carlos Rodolfo Morales Ruiz" maxlength="60">
+                            <span class="error-campo"></span>
+                        </div>
+                        <div class="form-group" data-tipo="email">
+                            <label for="emailCliente">2. Correo electrónico</label>
+                            <input type="text" id="emailCliente" placeholder="Ej. correo@dominio.com" maxlength="60">
+                            <span class="error-campo"></span>
+                        </div>
+                        <div class="form-group" data-tipo="telefono">
+                            <label for="telefono">3. Teléfono (8 dígitos)</label>
+                            <input type="text" id="telefono" placeholder="Ej. 78426903" maxlength="8" inputmode="numeric">
+                            <span class="error-campo"></span>
+                        </div>
+                    </div>
+                    <div class="paso" data-paso="1" style="display:none;">
+                        <div class="form-group" data-tipo="servicio">
+                            <label for="tipoServicio">4. Tipo de servicio</label>
+                            <input type="text" id="tipoServicio" placeholder="Ej. Ciberseguridad" maxlength="40">
+                            <span class="error-campo"></span>
+                        </div>
+                        <div class="form-group" data-tipo="presupuesto">
+                            <label for="presupuesto">5. Presupuesto en Bs.</label>
+                            <input type="text" id="presupuesto" placeholder="Ej. 500" maxlength="9" inputmode="numeric">
+                            <span class="error-campo"></span>
+                        </div>
+                        <div class="form-group" data-tipo="fecha">
+                            <label for="fechaLimite">6. Fecha límite</label>
+                            <input type="date" id="fechaLimite">
+                            <span class="error-campo"></span>
+                        </div>
+                    </div>
+                    <div class="paso" data-paso="2" style="display:none;">
+                        <div class="form-group" data-tipo="descripcion">
+                            <label for="descripcion">7. Descripción</label>
+                            <input type="text" id="descripcion" placeholder="Detalle breve" maxlength="200">
+                            <span class="error-campo"></span>
+                        </div>
+                        <div class="form-group form-check" data-tipo="acepto">
+                            <div class="check-row">
+                                <input type="checkbox" id="acepto">
+                                <label for="acepto">8. Acepto que me contacten</label>
+                            </div>
+                            <span class="error-campo"></span>
+                        </div>
+                        <div id="alertaBox" aria-live="polite"></div>
+                    </div>
+                    <div class="form-nav">
+                        <button type="button" class="btn-sec btn-tactil btn-refresh-target" id="btnAtras" disabled>‹ Atrás</button>
+                        <button type="button" class="btn-submit btn-tactil btn-refresh-target" id="btnSiguiente">Siguiente ›</button>
+                        <button type="submit" class="btn-submit btn-tactil btn-refresh-target" id="btnEnviar" style="display:none;">Enviar</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- FRASE -->
+            <section class="view" id="view-frase">
+                <div class="frase">
+                    "Sé extremadamente sutil, incluso hasta el punto de la informalidad."
+                    <span>— Sun Tzu</span>
+                </div>
+            </section>
+
+            <!-- MODAL DE JUEGOS -->
+            <div id="modalJuego" class="modal-overlay" role="dialog" aria-modal="true">
+                <div class="modal-contenido">
+                    <button id="cerrarModal" class="modal-cerrar btn-tactil">&times;</button>
+                    <h3 id="modalTitulo">Título</h3>
+                    <p id="modalDescripcion">Descripción...</p>
+                </div>
             </div>
-        </section>
+        </main>
+
+        <!-- DOCK INFERIOR -->
+        <footer class="dock" id="contacto">
+            <span class="dock-texto">Diseño Web II PWA 😎✨</span>
+            <div class="redes">
+                <a href="https://wa.me/59178426903" target="_blank" rel="noopener noreferrer" class="boton-red whatsapp" title="WhatsApp">💬</a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="boton-red facebook" title="Facebook">f</a>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="boton-red tiktok" title="TikTok">♪</a>
+            </div>
+        </footer>
     </div>
-
-    <footer id="contacto">
-        <span><strong class="logo-inline">CYBER<span>ZONE</span></strong> · Abierto todos los días (10:00 - 23:00)</span>
-        
-        <!-- SECCIÓN DE REDES SOCIALES COMPACTA -->
-        <div class="social-links">
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram">📸</a>
-        <a href="https://facebook.com" target="_blank" aria-label="Facebook">📘</a>
-        <a href="https://tiktok.com" target="_blank" aria-label="TikTok">🎵</a>
-        <a href="https://wa.me/59100000000" target="_blank" aria-label="WhatsApp">💬</a>
-        </div>
-
-        <span class="copy">© 2026 CyberZone. Todos los derechos reservados.</span>
-    </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
