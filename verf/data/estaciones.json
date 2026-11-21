@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ps5",
+    "nombre": "Estación PS5",
+    "tema": "card-green",
+    "icono": "🎮",
+    "imagen": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=128&q=80",
+    "alt": "Consola PlayStation 5 blanca junto a control inalámbrico DualSense iluminado",
+    "descripcion": "Consola de nueva generación en sala cómoda, ideal para jugar en pareja o con amigos.",
+    "componentes": [
+      "PlayStation 5 con SSD de 1 TB",
+      "Ray tracing y salida 4K a 120 fps"
+    ],
+    "monitores": [
+      "TV 4K de 55\" con modo juego (VRR)"
+    ],
+    "perifericos": [
+      "2 mandos DualSense / Pulse 3D"
+    ],
+    "catalogo": [
+      "FC 26, God of War, Spider-Man 2, MK1"
+    ]
+  },
+  {
+    "id": "pc-gamer",
+    "nombre": "PC Gamer Pro",
+    "tema": "card-blue",
+    "icono": "🖥️",
+    "imagen": "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=128&q=80",
+    "alt": "Gabinete de computadora PC Gamer de alto rendimiento con refrigeración líquida e iluminación RGB",
+    "descripcion": "Máximo rendimiento para competitivo y juegos AAA en gráficos ultra.",
+    "componentes": [
+      "GPU: RTX 4080 / CPU: i7 14th Gen",
+      "32 GB RAM DDR5 + SSD NVMe 1 TB"
+    ],
+    "monitores": [
+      "Monitor 240Hz 1 ms, 27\" QHD"
+    ],
+    "perifericos": [
+      "Teclado mecánico RGB y mouse 26K DPI"
+    ],
+    "catalogo": [
+      "Valorant, CS2, LoL, Cyberpunk 2077"
+    ]
+  },
+  {
+    "id": "arcade",
+    "nombre": "Estación Arcade",
+    "tema": "card-pink",
+    "icono": "🕹️",
+    "imagen": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=128&q=80",
+    "alt": "Máquina recreativa arcade clásica con pantalla iluminada y controles tipo joystick",
+    "descripcion": "Gabinetes retro con la experiencia clásica de los salones de los 90.",
+    "componentes": [
+      "Gabinete 2 jugadores con +3000 juegos",
+      "Emulación fiel, sin lag de entrada"
+    ],
+    "monitores": [
+      "Pantalla LCD 24\" con filtro CRT"
+    ],
+    "perifericos": [
+      "Joysticks y botones tipo Sanwa"
+    ],
+    "catalogo": [
+      "Street Fighter II, Metal Slug, KOF '98"
+    ]
+  }
+]
