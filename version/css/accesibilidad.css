@@ -1,0 +1,209 @@
+/* ==========================================================================
+   MÓDULO INDEPENDIENTE DE ACCESIBILIDAD WEB (a11y) Y CONTRASTE WCAG
+   ========================================================================== */
+
+/* 1. Anillo de enfoque visible para navegación por teclado (Tab / Shift+Tab) */
+:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #0d9488 !important;
+    outline-offset: 2px !important;
+}
+
+/* Estilo base del botón de simulación en la barra superior */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.btn-contraste {
+    background: rgba(13, 148, 136, 0.15);
+    color: #e6e6e6;
+    border: 1px solid #0d9488;
+    border-radius: 6px;
+    padding: 0.3rem 0.7rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-contraste:hover {
+    background: #0d9488;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   2. SIMULACIÓN DE ALTO CONTRASTE (WCAG AAA)
+   ========================================================================== */
+body.alto-contraste {
+    background-color: #000000 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+}
+
+/* Barra de navegación, pie de página y contenedores */
+body.alto-contraste .navbar,
+body.alto-contraste footer,
+body.alto-contraste nav.open {
+    background-color: #000000 !important;
+    border-color: #facc15 !important;
+    box-shadow: none !important;
+}
+
+/* Textos generales y encabezados */
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste h4,
+body.alto-contraste p,
+body.alto-contraste span,
+body.alto-contraste li,
+body.alto-contraste label,
+body.alto-contraste .logo,
+body.alto-contraste .logo-inline {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+body.alto-contraste .logo span,
+body.alto-contraste .logo-inline span,
+body.alto-contraste .section-title span,
+body.alto-contraste .glitch,
+body.alto-contraste .hero-tag,
+body.alto-contraste #total {
+    color: #facc15 !important;
+    text-shadow: none !important;
+}
+
+/* Tarjetas del catálogo (.estacion-card y .card-item) */
+body.alto-contraste .estacion-card,
+body.alto-contraste .card-item {
+    background-color: #111827 !important;
+    border: 2px solid #facc15 !important;
+    box-shadow: none !important;
+}
+
+body.alto-contraste .card-thumb {
+    border: 2px solid #facc15 !important;
+}
+
+body.alto-contraste .accordion-panel li::before {
+    color: #facc15 !important;
+}
+
+/* Botones de acción, acordeón y filtros */
+body.alto-contraste .btn-neon,
+body.alto-contraste .accordion-btn,
+body.alto-contraste #btnModal,
+body.alto-contraste #btnPagar,
+body.alto-contraste #btnCancelar,
+body.alto-contraste .btn-contraste,
+body.alto-contraste .nav-toggle {
+    background-color: #facc15 !important;
+    color: #000000 !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: none !important;
+    font-weight: 700 !important;
+}
+
+body.alto-contraste .btn-neon:hover,
+body.alto-contraste .accordion-btn:hover,
+body.alto-contraste #btnModal:hover,
+body.alto-contraste .btn-contraste:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #facc15 !important;
+}
+
+/* Enlaces de navegación y redes sociales */
+body.alto-contraste nav a,
+body.alto-contraste .social-links a {
+    color: #facc15 !important;
+    border-color: #facc15 !important;
+    background-color: #111827 !important;
+}
+
+/* Modal de Reserva e Inputs */
+body.alto-contraste .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+}
+
+body.alto-contraste .modal-content {
+    background-color: #111827 !important;
+    border: 3px solid #facc15 !important;
+    box-shadow: none !important;
+}
+
+body.alto-contraste .btn-close {
+    color: #facc15 !important;
+}
+
+body.alto-contraste .reserva-box input,
+body.alto-contraste .reserva-box select {
+    background-color: #000000 !important;
+    color: #facc15 !important;
+    border: 2px solid #facc15 !important;
+}
+
+/* ==========================================================================
+   4. AUDITORÍA SEMÁNTICA HTML5 - GUÍA DE CIERRE (PREGUNTAS 35 Y 36)
+   ========================================================================== */
+.audit-grupo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+#btnAuditarA11Y {
+    background: rgba(0, 255, 102, 0.12);
+    color: #00ff66;
+    border: 1px solid #00ff66;
+    border-radius: 4px;
+    padding: 0.25rem 0.75rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#btnAuditarA11Y:hover {
+    background: #00ff66;
+    color: #000000;
+}
+
+#reporteA11Y {
+    font-size: 0.8rem;
+    color: #9a9a9a;
+    margin: 0;
+}
+
+#reporteA11Y.audit-ok {
+    color: #00ff66;
+    font-weight: 600;
+}
+
+#reporteA11Y.audit-warn {
+    color: #ff007f;
+    font-weight: 600;
+}
+
+/* Compatibilidad con Modo Alto Contraste */
+body.alto-contraste #btnAuditarA11Y {
+    background-color: #facc15 !important;
+    color: #000000 !important;
+    border: 2px solid #ffffff !important;
+}
+
+body.alto-contraste #reporteA11Y {
+    color: #facc15 !important;
+}
